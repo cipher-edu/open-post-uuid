@@ -13,9 +13,11 @@ Django'da UUID'lar foydalanish uchun uuid kutubxonasi yoki Django REST framework
 args va kwargs: "args" va "kwargs"lar Python'da funksiyalarga argumentlar o'rnatingan daftarlar (list) va lug'atlar (dictionary) sifatida foydalaniladigan xususiyatlar hisoblanadi. Django'da, "args" va "kwargs"lar bitta funksiya yoki sinfni boshqarishda foydalaniladi. Misol uchun, bir model obyektini yaratishda MyModel.objects.create() funksiyasi args va kwargslarni qabul qiladi. Bu yordamda, siz MyModel sinfidagi ustunlarga, misol uchun name va agega, qiymatlar berishingiz mumkin. Bu qiymatlar "kwargs" yordamida to'g'ridan-to'g'ri sinfga o'tkaziladi va uni avtomatik ravishda yaratadi:
 python
 Copy code
+<h1>
 MyModel.objects.create(name="John", age=25)
 pk: "pk" ("primary key") shunchaki ma'lumotlar bazasidagi yozuvning bitta xususiy belgisidir. Barcha Django model sinflari "pk" nomi bilan bitta standart xususiyatga ega, shuningdek, "pk" xususiyati avtomatik ravishda yaratiladi. "pk" xususiyati, ma'lumotlar bazasidagi yozuvlar (records) orasida har bir yozuvni bitta xususiy belg'ilarga (unique identifier) bog'laydi.
 Django'da bitta yozuvni boshqa yozuvga bog'lash uchun, "ForeignKey" xususiyati ishlatiladi. "ForeignKey" yordamida bitta yozuvning "pk" xususiyati boshqa yozuvda yoziladi. Misol uchun, agar siz "Person" va "Address" model calsslari o'zlashtirsangiz, "Address" model sinfindagi bitta yozuvni "Person" model sinfiga bog'lash uchun "ForeignKey" xususiyati ishlatishingiz mumkin:
+</h1>
 
 class Person(models.Model):
     name = models.CharField(max_length=50)
