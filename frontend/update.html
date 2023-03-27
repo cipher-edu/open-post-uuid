@@ -9,41 +9,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 <body>
-  <a href="{% url 'add' %}"><button class="btn btn-success">yangi qo'shish</button></a>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">Company name</th>
-            <th scope="col">Company logo</th>
-            <th>
-              delete
-            </th>
-            <th>
-              taxrirlash
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for posts in post %}
-          <tr>
-            <th scope="row">{{posts.id}}</th>
-            <td>{{posts.name}}</td>
-            <td><img src="{{posts.logo}}" width="150" height="150" alt=""></td>
-            <td>
-              <a href="/delete/{{posts.id}}">
-              <i class="material-icons" style="font-size:24px;color:red">delete</i>
-            </a>
-            </td>
-            <td>
-              <a href="/edit/{{posts.id}}">
-                <i class="material-icons">edit</i>
-              </a>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+<form action="editrecord/{{post.id}}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{post.name}}">
+    <input type="text" name="about" value="{{post.about}}">
+    <input type="text " name="logo" value="{{post.logo}}">
+    <button class="btn btn-success" type="submit">Saqlash</button>
+</form>
 
    
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
